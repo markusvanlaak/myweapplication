@@ -1,0 +1,13 @@
+{{template "header"}}
+{{template "links" .}}
+
+<table>
+    <th>Firstname</th>
+    <th>Lastname</th>
+{{range .MyPersons}}
+    <tr><td>{{.Fname}}</td><td>{{.Lname}}</td></tr>
+{{end}}
+</table>
+
+</body>
+</html>
