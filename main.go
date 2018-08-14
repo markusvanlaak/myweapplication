@@ -1,31 +1,17 @@
 package main
 
 import (
+	"github.com/markusvanlaak/go/myweapplication/internal"
 	"net/http"
-	"fmt"
-	"io"
-	"myweapplication/internal"
-	)
-
-
-func person(w http.ResponseWriter, r *http.Request){
-	io.WriteString(w, "bly")
-}
-
-
+	"log"
+)
 
 func init() {
 
 }
 
-func main(){
-	Hellfunc()
-
-
-
-
-
-	http.HandleFunc("/person", person)
-	fmt.Println("Starting Webserver")
+func main() {
+	http.HandleFunc("/person", internal.GetData)
+	log.Println("Starting Webserver")
 	http.ListenAndServe(":8081", http.DefaultServeMux)
 }

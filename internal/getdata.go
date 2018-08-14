@@ -3,8 +3,9 @@ package internal
 import (
 	"html/template"
 	"log"
-	"os"
 	"gopkg.in/mgo.v2"
+	"net/http"
+
 )
 
 type Link struct {
@@ -31,7 +32,7 @@ func check(e error) {
 	}
 }
 
-func Mvl() {
+func GetData(w http.ResponseWriter, r *http.Request)  {
 	Session, err := mgo.Dial("127.0.0.1:27017")
 	check(err)
 
@@ -61,7 +62,7 @@ func Mvl() {
 
 	tpl := template.Must(template.ParseGlob("templates/*.gohtml"))
 
-	err = tpl.Execute(os.Stdout, data)
+	tpl.ExecuteTemplate(w, "people", data)
 	check(err)
 }
 
