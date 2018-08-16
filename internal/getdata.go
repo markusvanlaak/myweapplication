@@ -2,11 +2,9 @@ package internal
 
 import (
 	"html/template"
-	"log"
 	"gopkg.in/mgo.v2"
 	"net/http"
-
-)
+	"log")
 
 type Link struct {
 	Link string
@@ -26,7 +24,7 @@ type Blog struct {
 
 var Session *mgo.Session
 
-func check(e error) {
+func Check(e error) {
 	if e != nil {
 		panic(e)
 	}
@@ -34,7 +32,7 @@ func check(e error) {
 
 func GetData(w http.ResponseWriter, r *http.Request)  {
 	Session, err := mgo.Dial("127.0.0.1:27017")
-	check(err)
+	Check(err)
 
 	// Optional. Switch the session to a monotonic behavior.
 	Session.SetMode(mgo.Monotonic, true)
@@ -63,7 +61,8 @@ func GetData(w http.ResponseWriter, r *http.Request)  {
 	tpl := template.Must(template.ParseGlob("templates/*.gohtml"))
 
 	tpl.ExecuteTemplate(w, "people", data)
-	check(err)
+	Check(err)
+	log.Println(r.Method, r.URL)
 }
 
 func getperson(mongoSession *mgo.Session) []Person {
@@ -76,7 +75,7 @@ func getperson(mongoSession *mgo.Session) []Person {
 	d := sessionCopy.DB("test").C("people")
 	d.Find(nil).All(&Result)
 
-	log.Println(Result)
+	//log.Println(Result)
 
 	return Result
 }

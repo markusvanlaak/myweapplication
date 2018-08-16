@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Template</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
 {{end}}
 
 
 {{define "links"}}
-{{range .MyLinks}}
 <ul>
+{{range .MyLinks}}
     <li><a href="{{.Link}}">{{.Name}}</a></li>
-</ul>
 {{end}}
+</ul>
 {{end}}
