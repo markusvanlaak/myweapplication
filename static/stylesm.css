@@ -1,0 +1,82 @@
+body, html {
+  height: 100%;
+  font: arial;
+  font-weight: bold;
+}
+
+.bg {
+  background-image: url("martinmarkusn3t.jpg");
+
+  /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar-default {
+    background: transparent;
+  	border: none;
+    width: 100%;
+}
+
+.form-group1 {
+  padding-top: 50px;
+  padding-left: 10px;
+  width: 160px;
+}
+
+.form-group2 {
+  padding-left: 10px;
+  width: 160px;
+}
+
+.checkbox {
+  padding-left: 10px;
+  width: 160px;
+}
+
+.btn {
+  padding-left: 10px;
+}
+
+}
+
+p {
+  font-size: 16px;
+  margin: 30px;
+}
+
+nav ul a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Navbar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+/* Navbar end*/

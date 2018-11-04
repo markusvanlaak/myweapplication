@@ -1,38 +1,47 @@
-table, th, td, tr, ul, li, li {
-    font-family: arial sans-serif;
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.bg-img {
+  /* The image used */
+  background-image: url("../images/martinmarkusn3t.jpg");
+
+  min-height: 680px;
+  max-height: 1080px;
+  max-width: 1680px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
 }
 
-table, th, td {
-    border: 1px gray;
-    text-align: left;
-    width: auto;
-    border-collapse: collapse;
+/* Position the navbar container inside the image */
+.container {
+  position: absolute;
+  margin: 20px;
+  width: auto;
 }
 
-tr:nth-child(even) {
-    background-color: #dddddd;
+/* The navbar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333333;
+/* Navbar links */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111111;
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }

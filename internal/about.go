@@ -1,14 +1,14 @@
 package internal
 
 import (
-	"net/http"
 	"html/template"
 	"log"
+	"net/http"
 )
 
-func About(w http.ResponseWriter, r *http.Request)  {
+func About(w http.ResponseWriter, r *http.Request) {
 
-	Text0 := Blog{"This is my first text", "First"}
+	/*Text0 := Blog{"This is my first text", "First"}
 	Texts := []Blog{Text0}
 
 	data := struct {
@@ -16,9 +16,9 @@ func About(w http.ResponseWriter, r *http.Request)  {
 	}{
 		Texts,
 	}
-
+	*/
 	tpl := template.Must(template.ParseGlob("templates/*.gohtml"))
 
-	tpl.ExecuteTemplate(w, "about", data)
+	tpl.ExecuteTemplate(w, "about", "data")
 	log.Println(r.Method, r.URL)
 }

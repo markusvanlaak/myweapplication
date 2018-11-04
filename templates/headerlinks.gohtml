@@ -14,6 +14,29 @@
 <ul>
 {{range .MyLinks}}
     <li><a href="{{.Link}}">{{.Name}}</a></li>
+
+
 {{end}}
+    <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+        <div class="dropdown-content">
+            <a onclick="myFunction()">Hide Table</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </li>
 </ul>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
+
 {{end}}
